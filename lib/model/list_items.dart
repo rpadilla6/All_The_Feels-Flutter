@@ -13,3 +13,9 @@ class TweetCard implements ListItem {
 
   TweetCard(this.handle, this.body, this.rating);
 }
+
+class SearchBar implements ListItem {
+  final String searchHelp;
+
+  SearchBar(this.searchHelp);
+}

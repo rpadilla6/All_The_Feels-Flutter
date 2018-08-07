@@ -52,6 +52,9 @@ flutter:
   #       - asset: fonts/TrajanPro.ttf
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
-  #
-  # For details regarding fonts from package dependencies,
-  # see https://flutter.io/custom-fonts/#from-packages
+  fonts:
+    - family: BarlowSemiCondensed
+      fonts:
+        - asset: assets/fonts/Barlow-Semi-Condensed-Regular/BarlowSemiCondensed-Regular.ttf
+        - asset: assets/fonts/Barlow-Semi-Condensed-Regular/BarlowSemiCondensed-Italic.ttf
+          style: italic
