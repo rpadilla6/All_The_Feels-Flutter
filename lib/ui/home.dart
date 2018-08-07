@@ -34,51 +34,65 @@ class _HomePageState extends State<HomePage> {
 
                   // Make Title
                   if (item is AppTitle) {
-                    return Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 20.0),
-                        child: Center(
-                          child: Text(
-                            item.heading,
-                            style: TextStyle(
-                                fontWeight: FontWeight.w700,
-                                color: Colors.white,
-                                fontSize: 50.0,
-                                fontFamily: 'BarlowSemiCondensed'),
-                          ),
-                        ));
-
-                    //Make the Cards
+                    return generateTitle(item);
+                    // make the search bar
                   } else if (item is SearchBar) {
-                    return Container(
-                        padding: const EdgeInsets.symmetric(vertical: 7.0, horizontal: 20.0),
-                        margin: const EdgeInsets.only(left: 10.0, right: 10.0, bottom: 20.0),
-                        decoration: BoxDecoration(
-                            color: Theme.of(context).accentColor,
-                            borderRadius: new BorderRadius.circular(50.0),
-                            boxShadow: [
-                              new BoxShadow(
-                                  color: Colors.white, blurRadius: 20.0)
-                            ]),
-                        child: TextField(
-                          decoration: new InputDecoration(
-                            border: InputBorder.none,
-                              hintText: item.searchHelp,
-                              icon: const Icon(Icons.search)),
-                        ));
+                    return generateSearchBar(item);
+                    //Make the Cards
                   } else if (item is TweetCard) {
-                    return new Card(
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: <Widget>[
-                          ListTile(
-                            leading: const Icon(Icons.face),
-                            title: Text(item.handle),
-                            subtitle: Text(item.body),
-                          )
-                        ],
-                      ),
-                    );
+                    return generateTweetCard(item);
                   }
                 })));
+  }
+  // Make the title inside a padding widget
+  Padding generateTitle(AppTitle item){
+    return Padding(
+        padding: const EdgeInsets.symmetric(vertical: 20.0),
+        child: Center(
+          child: Text(
+            item.heading,
+            style: TextStyle(
+                fontWeight: FontWeight.w700,
+                color: Colors.white,
+                fontSize: 50.0,
+                fontFamily: 'BarlowSemiCondensed'),
+          ),
+        ));
+  }
+
+  // Create the search bar as a text field with decoration (may animate)
+  Container generateSearchBar(SearchBar item) {
+    return Container(
+        padding: const EdgeInsets.symmetric(vertical: 7.0, horizontal: 20.0),
+        margin: const EdgeInsets.only(left: 10.0, right: 10.0, bottom: 20.0),
+        decoration: BoxDecoration(
+            color: Theme.of(context).accentColor,
+            borderRadius: new BorderRadius.circular(50.0),
+            boxShadow: [
+              new BoxShadow(
+                  color: Colors.white, blurRadius: 20.0)
+            ]),
+        child: TextField(
+          decoration: new InputDecoration(
+              border: InputBorder.none,
+              hintText: item.searchHelp,
+              icon: const Icon(Icons.search)),
+        ));
+  }
+
+  // Create the tweet cards (will have to make async later)
+  Card generateTweetCard(TweetCard item){
+    return new Card(
+      margin: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+      child: Padding(
+        padding: const EdgeInsets.all(3.0),
+        child:
+              ListTile(
+                leading: const Icon(Icons.face),
+                title: Text(item.handle),
+                subtitle: Text(item.body),
+              )
+      ),
+    );
   }
 }
