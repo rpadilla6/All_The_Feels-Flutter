@@ -16,10 +16,11 @@
     <session id="595967959">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="2" />
+          <entry key="project.closed" value="3" />
+          <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.10" value="2" />
           <entry key="project.open.time.15" value="1" />
-          <entry key="project.opened" value="3" />
+          <entry key="project.opened" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -41,15 +42,15 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="dart" value="19562" />
-          <entry key="txt" value="313" />
+          <entry key="dart" value="21171" />
+          <entry key="txt" value="469" />
           <entry key="yaml" value="504" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Dart" value="19562" />
-          <entry key="PLAIN_TEXT" value="313" />
+          <entry key="Dart" value="21171" />
+          <entry key="PLAIN_TEXT" value="469" />
           <entry key="YAML" value="504" />
         </counts>
       </usages-collector>
@@ -72,8 +73,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/ui/home.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1743">
-              <caret column="32" selection-start-column="32" selection-end-column="32" />
+            <state relative-caret-position="323">
+              <caret line="40" selection-start-line="40" selection-end-line="40" />
+              <folding>
+                <element signature="e#0#61#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -174,14 +178,14 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1533624600393" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1534440707961" />
     <property name="dart.analysis.tool.window.force.activate" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -216,7 +220,8 @@
       <updated>1533515832753</updated>
       <workItem from="1533515848113" duration="17613000" />
       <workItem from="1533625928720" duration="2768000" />
-      <workItem from="1533791988952" duration="5178000" />
+      <workItem from="1533791988952" duration="5442000" />
+      <workItem from="1537735981287" duration="2445000" />
     </task>
     <task id="LOCAL-00001" summary="Added initial flutter project">
       <created>1533516340241</created>
@@ -253,11 +258,18 @@
       <option name="project" value="LOCAL" />
       <updated>1533627402195</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="App works with JSON test data from web, next step is to get actual tweets! Next next step is working on an animation for the score...">
+      <created>1533797228894</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1533797228894</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25559000" />
+    <option name="totallyTimeSpent" value="28268000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
@@ -321,7 +333,8 @@
     <MESSAGE value="Running prototype that has cards and title (cards are not actual data)" />
     <MESSAGE value="Added search bar, will think about making code more modular" />
     <MESSAGE value="Update comments and made code more modular, also gained more control over card objects" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update comments and made code more modular, also gained more control over card objects" />
+    <MESSAGE value="App works with JSON test data from web, next step is to get actual tweets! Next next step is working on an animation for the score..." />
+    <option name="LAST_COMMIT_MESSAGE" value="App works with JSON test data from web, next step is to get actual tweets! Next next step is working on an animation for the score..." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/.gitignore">
@@ -344,6 +357,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/lib/main.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="2" selection-start-line="19" selection-start-column="2" selection-end-line="19" selection-end-column="2" />
+          <folding>
+            <element signature="e#0#52#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/pubspec.yaml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1003">
@@ -358,20 +381,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/main.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="2" selection-start-line="19" selection-start-column="2" selection-end-line="19" selection-end-column="2" />
-          <folding>
-            <element signature="e#0#52#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/ui/home.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1743">
-          <caret column="32" selection-start-column="32" selection-end-column="32" />
+        <state relative-caret-position="323">
+          <caret line="40" selection-start-line="40" selection-end-line="40" />
+          <folding>
+            <element signature="e#0#61#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

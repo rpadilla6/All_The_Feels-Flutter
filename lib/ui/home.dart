@@ -13,6 +13,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   List<ListItem> items;
   Widget tweetContainer;
+  var _searchBarController = new TextEditingController();
 
   _HomePageState() {
     // Generate the list of items for testing
@@ -26,6 +27,19 @@ class _HomePageState extends State<HomePage> {
       }
     });
     tweetContainer = generateTweetCard();
+  }
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+
+    _searchBarController.addListener(_sendTweetQuery);
+  }
+
+  _sendTweetQuery(){
+    setState(() {
+      tweetContainer = generateTweetCard();
+    });
   }
 
   @override
@@ -81,13 +95,15 @@ class _HomePageState extends State<HomePage> {
               border: InputBorder.none,
               hintText: item.searchHelp,
               icon: const Icon(Icons.search)),
+          controller: _searchBarController,
+          keyboardType: TextInputType.text,
         ));
   }
 
   // Uses future builder to grab tweets (json data for testing)
   Widget generateTweetCard() {
     return new FutureBuilder(
-      future: getTweets("test"),
+      future: getTweets(_searchBarController.text),
       builder: (BuildContext context, AsyncSnapshot<List> snapshot) {
         if (snapshot.hasData) {
           // Depending on how json data is returned could be map or list
@@ -108,7 +124,7 @@ class _HomePageState extends State<HomePage> {
                       child: ListTile(
                         leading: const Icon(Icons.face),
                         title: Text(tweets[index]['title']),
-                        subtitle: Text(tweets[index]['body']),
+                        subtitle: Text(tweets[index]['Anger'].toString()),
                       )),
                 );
               },
@@ -135,7 +151,7 @@ class _HomePageState extends State<HomePage> {
 
   // Future method to get the response query from backend
   Future<List> getTweets(String query) async {
-    String url = "https://jsonplaceholder.typicode.com/posts";
+    String url = "http://68.4.158.170/search/"+query;
     http.Response response = await http.get(url);
     return json.decode(response.body);
   }
